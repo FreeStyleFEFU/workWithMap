@@ -27,8 +27,7 @@ def empty_nodes_quantity(all_nodes):
     other_nodes_quantity = 0
 
     for node in all_nodes:
-        tags = node('tag')
-        if len(tags) == 0:
+        if not node('tag'):
             empty_nodes_quantity += 1
         else:
             other_nodes_quantity += 1
