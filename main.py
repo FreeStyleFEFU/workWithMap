@@ -90,7 +90,3 @@ nodes_quantity(all_nodes)
 empty_nodes_quantity(all_nodes)
 gas_station_quantity(all_nodes)
 all_gas_station_quantity(soup)
-
-
-
-
