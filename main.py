@@ -80,7 +80,6 @@ def work_with_ways():
     print(f'Id здания с максимальной площадью: {max(nodes_areas, key=nodes_areas.get)}')
 
 
-
 xml = open('map2.osm', 'r', encoding='utf8').read()
 soup = BeautifulSoup(xml, 'html.parser')
 
