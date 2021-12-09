@@ -69,14 +69,13 @@ def work_with_ways():
 
     for way in soup.findAll('way'):
         nds = way('nd')
-        if nds[0]['ref'] == nds[-1]['ref']:
-            if list(filter(lambda tg: tg['k'] == 'building', way('tag'))):
-                id = way['id']
-                coords = list(map(lambda nd: nodes_coords[nd['ref']], nds))
-                nodes_areas[id] = getsqr(coords)
+        if nds[0]['ref'] == nds[-1]['ref'] and list(filter(lambda tg: tg['k'] == 'building', way('tag'))):
+            id = way['id']
+            coords = list(map(lambda nd: nodes_coords[nd['ref']], nds))
+            nodes_areas[id] = getsqr(coords)
 
-                print(id)
-                print(coords)
+            print(id)
+            print(coords)
 
     print(f'Id здания с максимальной площадью: {max(nodes_areas, key=nodes_areas.get)}')
 
